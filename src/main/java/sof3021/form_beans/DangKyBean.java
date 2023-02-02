@@ -1,6 +1,10 @@
 package sof3021.form_beans;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class DangKyBean {
+	@NotBlank(message="Khong duoc de trong")
 	private String ho_ten;
 	private String nam_sinh;
 	private String dia_chi;
