@@ -13,7 +13,7 @@
 	<div class="col-8 offset-2 mt-5">
 		<div class="row">
 			<div class="col-6">
-				<a href="#" class="btn btn-primary">Thêm mới</a>
+				<a href="/account/create" class="btn btn-primary">Thêm mới</a>
 			</div>
 			<div class="col-6"></div>
 		</div>
@@ -40,8 +40,19 @@
 					<td>${ acc.photo }</td>
 					<td>${ acc.activated == 1 ? "Active" : "Inactive" }</td>
 					<td>${ acc.admin == 1 ? "Admin" : "Member" }</td>
-					<td><a href="#" class="btn btn-primary">Update</a></td>
-					<td><a href="#" class="btn btn-danger">Delete</a></td>
+					<td>
+						<a class="btn btn-primary"
+							href="/account/edit/${ acc.id }">
+						Update
+						</a>
+					</td>
+					<td>
+						<a
+							href="/account/delete/${ acc.id }" 
+							class="btn btn-danger">
+							Delete
+						</a>
+					</td>
 				</tr>
 			</c:forEach>
 			</tbody>
