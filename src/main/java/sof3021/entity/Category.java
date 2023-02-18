@@ -10,6 +10,7 @@ import java.util.Map;
 import jakarta.persistence.*;
 
 @Entity(name="categories")
+// @NamedQuery(name = "SelectAll", query = "SELECT * FROM ")
 public class Category implements Serializable {
 
     /** Primary key. */

@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import sof3021.beans.Company;
+import sof3021.entity.Account;
+import sof3021.repositories.AccountRepository;
 
 @Controller
 public class HelloController {
 	@Autowired
 	@Qualifier("HCM")
 	private Company company;
+	
+	@Autowired
+	private AccountRepository accRepo;
 	
 	@GetMapping("hello")
 	public String hello(
@@ -31,6 +36,9 @@ public class HelloController {
 //			//
 //		}
 		
+		Account a = this.accRepo.findByUsername("TienNH24");
+		System.out.println(a.getFullname());
+		System.out.println("HelloController@hello");
 		System.out.println(this.company.getName());
 		return "hello";
 	}
